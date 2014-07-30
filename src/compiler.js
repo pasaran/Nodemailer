@@ -210,6 +210,7 @@ Compiler.prototype._createContentNode = function(parentNode, element) {
 Compiler.prototype._getAttachments = function(findRelated) {
     var attachments = [].concat(this.mail.attachments || []).map(function(attachment, i) {
         var data = {
+            contentDisposition: attachment.contentDisposition || 'attachment',
             contentType: attachment.contentType ||
                 libmime.detectMimeType(attachment.filename || attachment.path || attachment.href || 'bin')
         };
