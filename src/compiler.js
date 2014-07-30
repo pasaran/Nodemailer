@@ -231,6 +231,7 @@ Compiler.prototype._getAttachments = function(findRelated) {
 
         if (attachment.cid) {
             data.cid = attachment.cid;
+            data.contentDisposition = 'inline';
         }
 
         if (attachment.path) {
